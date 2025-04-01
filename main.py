@@ -1,12 +1,10 @@
 import json
 from datetime import datetime
 
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
-
-import chromedriver_binary
 
 FACEBOOK_URL = "https://www.facebook.com/"
 EVENT_ENDPOINT = "/events"
@@ -51,6 +49,12 @@ class Event:
             date += " à "+self.date.strftime('%H:%M')
         return f"{self.name} le {date} à {self.address}"
 
+    def to_dict(self) -> dict:
+        date = self.date.strftime('%d/%m')
+        if not (self.date.hour == self.date.minute and self.date.minute == 0):
+            date += " "+self.date.strftime('%H:%M')
+        return {"name": self.name, "date": date, "address": self.address}
+
 
 def parse_events(events_txt: str):
     if not events_txt:
@@ -63,6 +67,8 @@ def get_events(driver: webdriver.Chrome, url: str):
     if "profile.php?id=" in url:
         url += "&sk=events"
         driver.get(FACEBOOK_URL+url)
+        if not driver.find_elements(By.XPATH, EVENTS_PHP_XPATH):
+            return []
         return parse_events(driver.find_elements(By.XPATH, EVENTS_PHP_XPATH)[0].text)
     else:
         url += EVENT_ENDPOINT
@@ -72,12 +78,26 @@ def get_events(driver: webdriver.Chrome, url: str):
         return parse_events(driver.find_elements(By.XPATH, EVENTS_XPATH)[0].text)
 
 
-def get_following(driver):
-    """Only works for the firsts followers
-    """
-    driver.get("https://www.facebook.com/parisbeerclub/following")
-    elem = driver.find_elements(By.XPATH, FOLLOWING_PATH)
-    soup = BeautifulSoup(elem[0].get_attribute('innerHTML'), )
+def get_subscribers(driver):
+    # Only works for the firsts followers
+    # driver.get("https://www.facebook.com/parisbeerclub/following")
+    # elem = driver.find_elements(By.XPATH, FOLLOWING_PATH)
+    # soup = BeautifulSoup(elem[0].get_attribute('innerHTML'), )
+
+    with open("subscribers.csv", "r", encoding="utf-8") as file_stream:
+        subscribers_data = file_stream.readlines()
+    subscribers = {}
+    for subscriber in subscribers_data:
+        subscriber = subscriber.split(";")
+        name = subscriber[0].strip()
+        print(name)
+        subscribers[name] = []
+        for event in get_events(driver, subscriber[1].strip()):
+            if event.date < NOW:
+                continue
+            subscribers[name].append(event.to_dict())
+            print(f"\t- {event}")
+    return subscribers
 
 
 if __name__ == "__main__":
@@ -85,13 +105,6 @@ if __name__ == "__main__":
     options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(service=service, options=options)
 
-    with open("clients.csv", "r") as file_stream:
-        lines = file_stream.readlines()
-        for line in lines:
-            line = line.split(";")
-            name = line[0].strip()
-            print(name)
-            for event in get_events(driver, line[1].strip()):
-                if event.date < NOW:
-                    continue
-                print(f"\t- {event}")
+    subscribers = get_subscribers(driver)
+    with open("output.json", "w", encoding="utf-8") as file_stream:
+        json.dump(subscribers, file_stream, indent=4, ensure_ascii=False)
