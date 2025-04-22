@@ -1,84 +1,102 @@
-import json
-from datetime import datetime
+from __future__ import annotations
 
-# from bs4 import BeautifulSoup
+import re
+import json
+import sys
+from datetime import timedelta, datetime
+from collections import OrderedDict
+
+from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 
-FACEBOOK_URL = "https://www.facebook.com/"
-EVENT_ENDPOINT = "/events"
 
-EVENTS_XPATH = "/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div/div/div[4]/div/div/div/div/div/div/div/div/div[3]"
-PAST_XPATH = "/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div/div/div[4]/div/div/div/div/div/div/div/div/div[2]/div/div/div/div[2]/a/div/span"
-EVENTS_PHP_XPATH = "/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div/div/div[4]/div/div/div/div[1]/div/div/div/div/div[3]/div[1]"
-FOLLOWING_PATH = "/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div/div/div[4]/div/div/div/div/div/div/div/div/div[3]"
+FACEBOOK_URL = "https://www.facebook.com/"
+PRO_EVENT_ENDPOINT = "events"
+NOT_PRO_EVENT_ENDPOINT = "&sk=events"
+
+DATE_PATTERN = re.compile(
+    r"[A-Z][a-z][a-z], ([A-Z][a-z][a-z] \d\d?) at (\d\d?:\d\d)[^a-zA-Z0-1]([A-Z]M) [A-Z][A-Z][A-Z]T")
+
+LINK_PATTERN = re.compile(rf"{FACEBOOK_URL}{PRO_EVENT_ENDPOINT}.*")
 
 NOW = datetime.now()
 
 
 class Event:
-    def __init__(self, event_txt: str):
-        event_list = event_txt.split("\n")
-        if len(event_list) == 5:
-            event_list = event_list[:-1]
-        elif len(event_list) == 6:
-            event_list = event_list[1:-1]
-        elif len(event_list) == 7:
-            event_list = event_list[1:-1]
-            event_list = [event_list[0], event_list[1] + " " + event_list[2], event_list[3], event_list[4]]
-        else:
-            raise NotImplementedError(f"Can't handle event with size: {len(event_list)}")
-        self.name = event_list[1]
-        date = event_list[0].replace(",", "").split(' ')
-        if len(date) > 5:
-            hour = date[4].replace('\u202f', ' ')
-            date = f"{NOW.year} {date[1]} {date[2]} {hour}"
-            self.date = datetime.strptime(date, "%Y %b %d %I:%M %p")
-        else:
-            date = f"{NOW.year} {date[1]} {date[2]}"
-            self.date = datetime.strptime(date, "%Y %b %d")
-        self.address = event_list[2]
-        town = event_list[3].split(' ')[-1]
-        if not self.address.endswith(town):
-            self.address += ", " + town
+    def __init__(self, date: datetime, name: str, address: str, subscriber: str, organizers: str, link=str):
+        self.name = name
+        self.date = date
+        self.address = address
+        self.subscriber = subscriber
+        if organizers == subscriber:
+            self.organizer = None
+        self.link = link
 
-    def __str__(self) -> str:
+    def _get_pretty_date(self) -> str:
         date = self.date.strftime('%d/%m')
         if not (self.date.hour == self.date.minute and self.date.minute == 0):
             date += " à "+self.date.strftime('%H:%M')
-        return f"{self.name} le {date} à {self.address}"
+        return date
+
+    def __str__(self) -> str:
+        return f"{self.name} le {self._get_pretty_date()} à {self.address} par {self.subscriber}"
+
+    def __repr__(self) -> str:
+        return f"{self.name} {self._get_pretty_date()} {self.subscriber}"
 
     def to_dict(self) -> dict:
-        date = self.date.strftime('%d/%m')
-        if not (self.date.hour == self.date.minute and self.date.minute == 0):
-            date += " "+self.date.strftime('%H:%M')
-        return {"name": self.name, "date": date, "address": self.address}
+        return {"name": self.name, "date": self._get_pretty_date(), "address": self.address, "organizer": self.subscriber, "link": self.link}
+
+    def to_json(self) -> str:
+        return json.dumps(self.to_dict(), indent=4, ensure_ascii=False)
+
+    def to_markdown(self) -> str:
+        if not self.link:
+            return str(self)
+        return f"[{self.name}]({self.link}) le {self._get_pretty_date()} à {self.address} par {self.subscriber}"
+
+    def __eq__(self, other: Event):
+        return self.name == other.name and self.date == other.date and self.address == other.address and self.subscriber == other.subscriber
 
 
-def parse_events(events_txt: str):
-    if not events_txt:
-        return
-    events_txt = events_txt.split('Event by')
-    return [Event(event_txt) for event_txt in events_txt[:-1]]
+def get_even_elem(elem, date_text) -> BeautifulSoup:
+    if elem.parent.text == date_text:
+        return get_even_elem(elem.parent, date_text)
+    return elem.parent
 
 
-def get_events(driver: webdriver.Chrome, url: str):
+def get_events(driver: webdriver.Chrome, subscriber: str, url: str) -> list[Event]:
+    events = []
     if "profile.php?id=" in url:
-        url += "&sk=events"
-        driver.get(FACEBOOK_URL+url)
-        if not driver.find_elements(By.XPATH, EVENTS_PHP_XPATH):
-            return []
-        return parse_events(driver.find_elements(By.XPATH, EVENTS_PHP_XPATH)[0].text)
+        url += "/"+NOT_PRO_EVENT_ENDPOINT
     else:
-        url += EVENT_ENDPOINT
-        driver.get(FACEBOOK_URL+url)
-        if not driver.find_elements(By.XPATH, PAST_XPATH) or driver.find_elements(By.XPATH, PAST_XPATH)[0].text == "Past":
-            return []
-        return parse_events(driver.find_elements(By.XPATH, EVENTS_XPATH)[0].text)
+        url += "/"+PRO_EVENT_ENDPOINT
+
+    driver.get(FACEBOOK_URL+url)
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    for elem in soup.find_all('span'):
+        match = DATE_PATTERN.match(elem.text)
+        if match:
+
+            event_elem = get_even_elem(elem, elem.text)
+
+            links = event_elem.find_all('a', href=LINK_PATTERN)
+
+            link = ""
+            if links:
+                link = links[0]['href']
+            date = datetime.strptime(f'{NOW.year} '+' '.join(match.groups()), '%Y %b %d %I:%M %p')
+            elem_dict = event_elem.get_text(separator=';').split(";")
+            elem_dict.remove(elem.text)
+            event = Event(date=date, name=elem_dict[0],
+                          address=elem_dict[1], subscriber=subscriber, organizers=elem_dict[-1], link=link)
+            if event not in events:
+                events.append(event)
+    return events
 
 
-def get_subscribers(driver):
+def get_subscribers(driver) -> dict[str, list[Event]]:
     # Only works for the firsts followers
     # driver.get("https://www.facebook.com/parisbeerclub/following")
     # elem = driver.find_elements(By.XPATH, FOLLOWING_PATH)
@@ -87,24 +105,50 @@ def get_subscribers(driver):
     with open("subscribers.csv", "r", encoding="utf-8") as file_stream:
         subscribers_data = file_stream.readlines()
     subscribers = {}
-    for subscriber in subscribers_data:
-        subscriber = subscriber.split(";")
-        name = subscriber[0].strip()
-        print(name)
-        subscribers[name] = []
-        for event in get_events(driver, subscriber[1].strip()):
-            if event.date < NOW:
-                continue
-            subscribers[name].append(event.to_dict())
-            print(f"\t- {event}")
+    for url in subscribers_data:
+        if not url.strip():
+            continue
+        url = url.split(";")
+        name = url[0].strip()
+        assert url and " " not in url, f"{url} is not a valid url"
+        subscribers[name] = get_events(driver, name, url[1].strip())
     return subscribers
 
 
-if __name__ == "__main__":
+def get_beer_agenda(start: datetime, stop: datetime):
     service = Service(executable_path='/usr/bin/chromedriver/chromedriver')
     options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(service=service, options=options)
 
     subscribers = get_subscribers(driver)
-    with open("output.json", "w", encoding="utf-8") as file_stream:
-        json.dump(subscribers, file_stream, indent=4, ensure_ascii=False)
+    dates = [start + timedelta(days=x) for x in range((stop-start).days)]
+    beer_agenda = OrderedDict()
+    for date in dates:
+        beer_agenda[date.strftime('%A %-d %B')] = []
+    json_subscribers = {}
+    for subscriber, events in subscribers.items():
+        json_subscribers[subscriber] = []
+        if not events:
+            continue
+        for event in events:
+            event_dict = event.to_dict()
+            json_subscribers[subscriber].append(event_dict)
+            if event.date <= stop and event.date >= start:
+                beer_agenda[event.date.strftime('%A %-d %B')].append(event)
+    beer_agenda_txt = '\n'.join([f"# {str_date}\n"+"\n".join([f"- {event.to_markdown()}" for event in events])
+                                 for str_date, events in beer_agenda.items()])
+    with open("output/subscribers.json", "w", encoding="utf-8") as file_stream:
+        json.dump(json_subscribers, file_stream, indent=4, ensure_ascii=False)
+    # with open("output/beer_agenda.json", "w", encoding="utf-8") as file_stream:
+    #     json.dump(beer_agenda, file_stream, indent=4, ensure_ascii=False)
+    with open("output/beer_agenda.md", "w", encoding="utf-8") as file_stream:
+        file_stream.write(beer_agenda_txt)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python main.py start_date stop_date")
+        sys.exit(1)
+    start = datetime.strptime(sys.argv[1], "%Y_%m_%d")
+    stop = datetime.strptime(sys.argv[2], "%Y_%m_%d")
+    get_beer_agenda(start, stop)
