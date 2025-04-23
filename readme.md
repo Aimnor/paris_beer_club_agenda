@@ -3,6 +3,8 @@ This repo is used to scrap events of Paris Beer Club pro subscribers
 
 Subscribers are for now listed in [subscribers.csv](subscribers.csv) based on PBC [followed accounts](https://www.facebook.com/parisbeerclub/following)
 
+Subscribers **MUST** have a public page for the parser to work (their facebook page must not start by https://www.facebook.com/profile.php?id=).
+
 # Requirements
 Is is meant to be used on Linux (debian based) and needs chromedriver to work
 

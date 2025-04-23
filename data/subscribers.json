@@ -1,0 +1,435 @@
+[
+    {
+        "name": "A la bière comme à la bière - Le Drunken",
+        "relative_url": "ledrunken",
+        "display_name": "à la bière comme à la bière - Le Drunken",
+        "email": "contact@ledrunken.com",
+        "phone": "07 66 81 13 33",
+        "address": "19, rue Girard, Montreuil, France",
+        "urls": [
+            "chng.it/FHhdhjy4Dp",
+            "linktr.ee/eldrunken",
+            "ledrunken.com"
+        ],
+        "page_type": "Bar"
+    },
+    {
+        "name": "BEER Paris",
+        "relative_url": "BEER.Paris.Cave",
+        "display_name": "le BEER Paris",
+        "email": "max@beerparis.com",
+        "phone": "01 43 48 71 63",
+        "address": "3 rue de la forge royale, Paris, France",
+        "urls": [
+            "beerparis.com"
+        ],
+        "page_type": "Magasin spécialisé dans la vente d’alcools"
+    },
+    {
+        "name": "Bières Cultes",
+        "relative_url": "bierescultes",
+        "display_name": "Bières Cultes",
+        "email": "contact@bierescultes.fr",
+        "phone": "09 81 98 93 32",
+        "address": "Paris, France",
+        "urls": [
+            "bierescultes.fr"
+        ],
+        "page_type": "Magasin spécialisé dans la vente d’alcools"
+    },
+    {
+        "name": "Biérocratie",
+        "relative_url": "bierocratie",
+        "display_name": "Biérocratie",
+        "email": "bierocratie@gmail.com",
+        "phone": "01 53 80 16 10",
+        "address": "32, rue de l'Espérance, Paris, France",
+        "urls": [
+            "bierocratie.com"
+        ],
+        "page_type": "Magasin spécialisé dans la vente d’alcools"
+    },
+    {
+        "name": "Black Mad Crawler",
+        "relative_url": "blackmadcrawler",
+        "display_name": "le Black Mad Crawler",
+        "email": "",
+        "phone": "09 54 77 33 40",
+        "address": "140 Boulevard Richard Lenoir, Paris, France",
+        "urls": [],
+        "page_type": ""
+    },
+    {
+        "name": "Brasserie Croix de Chavaux",
+        "relative_url": "croixdechavaux",
+        "display_name": "la Brasserie Croix de Chavaux",
+        "email": "contact@croixdechavaux.com",
+        "phone": "07 81 46 89 58",
+        "address": "8, rue Désiré Charton, Montreuil, France",
+        "urls": [
+            "fr.ulule.com/croix-de-chavaux/?utm_campaign=presale_194145&utm_source=shared-from-Ulule-success-modal-on---http.referer--&utm_medium=uluid_1471462",
+            "croixdechavaux.com"
+        ],
+        "page_type": "Bar à bières"
+    },
+    {
+        "name": "Brasserie d'Orville",
+        "relative_url": "BrasserieOrville",
+        "display_name": "la Brasserie d'Orville",
+        "email": "contact@brasseriedorville.com",
+        "phone": "01 85 52 11 11",
+        "address": "29, rue de Paris, Louvres, France",
+        "urls": [
+            "brasseriedorville.com"
+        ],
+        "page_type": "Bar  Bar à bières  Brasserie"
+    },
+    {
+        "name": "Brasserie de la Goutte d'Or",
+        "relative_url": "brasserielagouttedor",
+        "display_name": "la Brasserie de la Goutte d'Or",
+        "email": "contact@brasserielagouttedor.com",
+        "phone": "09 80 64 23 51",
+        "address": "28 rue de la Goutte d'Or, Paris, France",
+        "urls": [
+            "brasserielagouttedor.com"
+        ],
+        "page_type": "Alimentation et boissons"
+    },
+    {
+        "name": "Brasserie du Grand Paris",
+        "relative_url": "brasseriegrandparis",
+        "display_name": "la Brasserie du Grand Paris",
+        "email": "contact@bgp.paris",
+        "phone": "09 81 04 81 20",
+        "address": "103 rue Charles Michels, Saint-Denis, France",
+        "urls": [
+            "bgp.paris"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Brasserie Parisis",
+        "relative_url": "brasserieparisis",
+        "display_name": "la Brasserie Parisis",
+        "email": "",
+        "phone": "01 60 46 62 33",
+        "address": "3 rue René Dumont, Combs-la-Ville, France",
+        "urls": [
+            "contact@brasserie-parisis.com",
+            "brasserie-parisis.com"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Café Mama Kin",
+        "relative_url": "cafemamakin",
+        "display_name": "le Café Mama Kin",
+        "email": "cafemamakin@gmail.com",
+        "phone": "",
+        "address": "13, rue de Thionville, Paris, France",
+        "urls": [],
+        "page_type": "Bar"
+    },
+    {
+        "name": "Les Cuves De Fauve",
+        "relative_url": "lescuvesdefauve",
+        "display_name": "les Cuves De Fauve",
+        "email": "bistrot@fauvebiere.com",
+        "phone": "07 49 05 95 96",
+        "address": "64 rue de Charonne, Paris, France",
+        "urls": [
+            "fauvebiere.com/pages/cuves-de-fauve"
+        ],
+        "page_type": "Restaurant"
+    },
+    {
+        "name": "Dr Feelgood - Rock Beer Temple",
+        "relative_url": "rockbeertemple",
+        "display_name": "le Dr Feelgood - Rock Beer Temple",
+        "email": "",
+        "phone": "",
+        "address": "34 rue Keller, Paris, France",
+        "urls": [
+            "linktr.ee/rockbeertemple"
+        ],
+        "page_type": "Bar"
+    },
+    {
+        "name": "Fédération Française de l'Apéritif",
+        "relative_url": "ffaperitif",
+        "display_name": "la Fédération Française de l'Apéritif",
+        "email": "contact@ffaperitif.fr",
+        "phone": "",
+        "address": "",
+        "urls": [
+            "ffaperitif.fr"
+        ],
+        "page_type": "Bar"
+    },
+    {
+        "name": "HAZY",
+        "relative_url": "hazy.paris",
+        "display_name": "le HAZY",
+        "email": "hello@hazy.paris",
+        "phone": "01 83 97 19 84",
+        "address": "7 rue Sorbier, Paris, France",
+        "urls": [
+            "hazy.paris",
+            "hazy.paris"
+        ],
+        "page_type": ""
+    },
+    {
+        "name": "La Binouze Paris",
+        "relative_url": "LaBinouzeParis",
+        "display_name": "la Binouze Paris",
+        "email": "contact@labinouze.fr",
+        "phone": "",
+        "address": "72 rue Marguerite de Rochechouart, Paris, France",
+        "urls": [
+            "labinouze.fr"
+        ],
+        "page_type": "Bar à bières"
+    },
+    {
+        "name": "La Fine Mousse",
+        "relative_url": "lafinemousse",
+        "display_name": "la Fine Mousse",
+        "email": "info@lafinemousse.fr",
+        "phone": "01 48 06 40 94",
+        "address": "6 Avenue Jean Aicard, Paris, France",
+        "urls": [
+            "lafinemousse.fr"
+        ],
+        "page_type": "Bar à bières"
+    },
+    {
+        "name": "La Robe & La Mousse",
+        "relative_url": "LaRobeEtLaMousse",
+        "display_name": "la Robe & La Mousse",
+        "email": "info@larobeetlamousse.fr",
+        "phone": "09 81 29 29 89",
+        "address": "3 rue Monsieur Le Prince, Paris, France",
+        "urls": [
+            "lafinemousse.fr"
+        ],
+        "page_type": "Bar"
+    },
+    {
+        "name": "La ruée vers l'orge",
+        "relative_url": "lrvoParis",
+        "display_name": "la ruée vers l'orge",
+        "email": "contact@lrvo.fr",
+        "phone": "01 49 96 53 70",
+        "address": "6 rue des fontaines du Temple, Paris, France",
+        "urls": [],
+        "page_type": "Bar à bières"
+    },
+    {
+        "name": "Le Supercoin",
+        "relative_url": "supercoin",
+        "display_name": "le Supercoin",
+        "email": "supercoinbar@gmail.com",
+        "phone": "",
+        "address": "17 rue Boinod , Paris, France",
+        "urls": [
+            "supercoin.net"
+        ],
+        "page_type": "Bar à bières"
+    },
+    {
+        "name": "les bières de Belleville",
+        "relative_url": "lesbieresdeBelleville",
+        "display_name": "les bières de Belleville",
+        "email": "lesbieresdebelleville@gmail.com",
+        "phone": "06 87 31 78 68",
+        "address": "9 rue Jean-Baptiste Dumay, Paris, France",
+        "urls": [],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Liquiderie Cave (Liquiderie Cave)",
+        "relative_url": "liquiderie.cave",
+        "display_name": "la Liquiderie Cave",
+        "email": "",
+        "phone": "09 52 70 24 44",
+        "address": "",
+        "urls": [
+            "liquiderie.com"
+        ],
+        "page_type": "Bar à vin"
+    },
+    {
+        "name": "Mashrooms",
+        "relative_url": "brasseriemashroomsparis",
+        "display_name": "Mashrooms",
+        "email": "contact@mashrooms.fr",
+        "phone": "06 72 56 60 81",
+        "address": "2 rue Gustave Rouanet, Paris, France",
+        "urls": [
+            "mashrooms.fr"
+        ],
+        "page_type": "Magasin spécialisé dans la vente d’alcools"
+    },
+    {
+        "name": "Microbrasserie Second Degré",
+        "relative_url": "microbrasserie.seconddegre",
+        "display_name": "la Microbrasserie Second Degré",
+        "email": "biere@auseconddegre.com",
+        "phone": "09 74 64 00 55",
+        "address": "10 rue de l'église, Magny-le-Hongre, France",
+        "urls": [
+            "privateaser.com/lieu/49348-microbrasserie-second-degre",
+            "auseconddegre.shop"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Nautilus Bar Paris",
+        "relative_url": "Nautilusbarparis",
+        "display_name": "le Nautilus Bar Paris",
+        "email": "contact@nautilusparis.com",
+        "phone": "09 51 94 54 59",
+        "address": "5 rue de Chateaudun, Paris, France",
+        "urls": [
+            "nautilusparis.com"
+        ],
+        "page_type": "Bar à cocktails"
+    },
+    {
+        "name": "NUKA Brewing",
+        "relative_url": "nukabrewing",
+        "display_name": "NUKA Brewing",
+        "email": "",
+        "phone": "",
+        "address": "Paris, France",
+        "urls": [],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Octopussy Paris",
+        "relative_url": "Octo.bar.Paris",
+        "display_name": "l'Octopussy Paris",
+        "email": "contact@octopussyparis.com",
+        "phone": "09 73 66 89 65",
+        "address": "22 rue de la Jonquière, Paris, France",
+        "urls": [
+            "octopussyparis.com"
+        ],
+        "page_type": "Bar"
+    },
+    {
+        "name": "Outland",
+        "relative_url": "brasserieoutland",
+        "display_name": "Outland",
+        "email": "",
+        "phone": "01 74 50 17 37",
+        "address": "54, rue André Tessier, Fontenay-sous-Bois, France",
+        "urls": [
+            "contact@outland-beer.com",
+            "outland-beer.com"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Taverne des Korrigans",
+        "relative_url": "tavernekorrigans",
+        "display_name": "la Taverne des Korrigans",
+        "email": "",
+        "phone": "01 43 26 96 59",
+        "address": "42 Rue du Cardinal Lemoine, Paris, France",
+        "urls": [],
+        "page_type": "Troquet"
+    },
+    {
+        "name": "We Are Brewers - WAB",
+        "relative_url": "wabparis",
+        "display_name": "le WAB",
+        "email": "maryne@wab.beer",
+        "phone": "",
+        "address": "16 boulevard Jules Ferry, Paris, France",
+        "urls": [],
+        "page_type": "Bar"
+    },
+    {
+        "name": "Hall's Beer Tavern",
+        "relative_url": "hallsbeertavern",
+        "display_name": "le Hall's Beer Tavern",
+        "email": "hallsbeertavern@orange.fr",
+        "phone": "01 42 36 92 72",
+        "address": "68 rue Saint Denis, Paris, France",
+        "urls": [
+            "hallsbeertavern.fr"
+        ],
+        "page_type": "Bar"
+    },
+    {
+        "name": "BaB OPERA - Bar et Cave à bières Paris",
+        "relative_url": "people/BaB-OPERA-Bar-et-Cave-à-bières-Paris/100039388933157",
+        "display_name": "le BaB OPERA",
+        "email": "lebabopera@gmail.com",
+        "phone": "",
+        "address": "25, rue Louis le Grand, Paris, France",
+        "urls": [
+            "barabieresparis.com"
+        ],
+        "page_type": "Bar à bières"
+    },
+    {
+        "name": "Beer’s Hops",
+        "relative_url": "people/Beers-Hops/100086151175567",
+        "display_name": "le Beer’s Hops",
+        "email": "contact.beershops@gmail.com",
+        "phone": "06 71 52 94 93",
+        "address": "10 Place Jean-Baptiste Lully, Saint-Cyr-l'École, France",
+        "urls": [],
+        "page_type": "Bar à bières"
+    },
+    {
+        "name": "Kilomètre Zéro",
+        "relative_url": "people/Kilomètre-Zéro/100094598254148",
+        "display_name": "le Kilomètre Zéro",
+        "email": "",
+        "phone": "01 42 74 37 36",
+        "address": "39 rue notre-dame de nazareth, Paris, France",
+        "urls": [
+            "contact@km-0.bar",
+            "km-0.bar"
+        ],
+        "page_type": "Bar"
+    },
+    {
+        "name": "La Cave Du Poney Qui Tousse",
+        "relative_url": "people/La-Cave-Du-Poney-Qui-Tousse/100090996006620",
+        "display_name": "la Cave Du Poney Qui Tousse",
+        "email": "lcdpqt@gmail.com",
+        "phone": "",
+        "address": "10 rue lemercier, Paris, France",
+        "urls": [],
+        "page_type": "Bar à bières"
+    },
+    {
+        "name": "Luppolo",
+        "relative_url": "people/Luppolo/100092529674766",
+        "display_name": "le Luppolo",
+        "email": "raffaele_troiano@orange.fr",
+        "phone": "09 83 87 92 08",
+        "address": "",
+        "urls": [
+            "linktr.ee/luppolobar",
+            "luppolo-bar.fr"
+        ],
+        "page_type": "Bar à bières"
+    },
+    {
+        "name": "Soquee Brewing",
+        "relative_url": "people/Soquee-Brewing/100089211693934",
+        "display_name": "Soquee Brewing",
+        "email": "soqueebrewing@gmail.com",
+        "phone": "06 89 26 26 32",
+        "address": "157 boulevard Davout, Paris, France",
+        "urls": [],
+        "page_type": "Brasserie"
+    }
+]
