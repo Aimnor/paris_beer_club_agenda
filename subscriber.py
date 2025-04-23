@@ -141,11 +141,13 @@ class Subscriber:
 
     @property
     def event_url(self):
-        if self.relative_url.startswith("people"):
-            event_link = "&sk=events"
+        if "profile" in self.relative_url:
+            return f"{self.base_url}&sk=events"
+        elif self.relative_url.startswith("people"):
+            profile_id = self.relative_url.split("/")[-1]
+            return f"{FACEBOOK_URL}profile.php?id={profile_id}&sk=events"
         else:
-            event_link = "events"
-        return f"{self.base_url}/{event_link}"
+            return f"{self.base_url}/events"
 
     @property
     def base_url(self):
@@ -257,10 +259,16 @@ class Subscribers:
 
         self.driver = Driver()
 
-        self.modified_date = datetime.fromtimestamp(os.path.getmtime(self.events_file_path))
-        with open(self.subscribers_file_path, "r", encoding="utf-8") as file_stream:
-            self._subscribers = [Subscriber(**sub) for sub in json.load(file_stream)]
-        self.build_subscribers()
+        self.modified_date = None
+        if os.path.exists(self.events_file_path):
+            self.modified_date = datetime.fromtimestamp(os.path.getmtime(self.events_file_path))
+            with open(self.events_file_path, "r", encoding="utf-8") as file_stream:
+                self._subscribers = [Subscriber(**sub) for sub in json.load(file_stream)]
+            self.build_subscribers()
+        else:
+            with open(self.subscribers_file_path, "r", encoding="utf-8") as file_stream:
+                self._subscribers = [Subscriber(**sub) for sub in json.load(file_stream)]
+            self.build_subscribers()
 
     def build_subscribers(self):
         print("Building subscribers...")
@@ -280,7 +288,7 @@ class Subscribers:
         print("Getting events...")
         bar = alive_it(self._subscribers)
         for subscriber in bar:
-            if force_get_event or self.modified_date < TODAY:
+            if self.modified_date is None or force_get_event or self.modified_date < TODAY:
                 subscriber.get_events(self.driver)
                 bar.text(f"Fetching event for {subscriber.display_name}")
             else:

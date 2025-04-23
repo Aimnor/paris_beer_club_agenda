@@ -6,13 +6,38 @@ from collections import OrderedDict
 
 from subscriber import Subscribers, TODAY
 
-
 class BeerAgenda:
-    DATE_FORMAT = "%A %d %B"
+    FRENCH_MONTHS = [
+        "Janvier",
+        "Février",
+        "Mars",
+        "Avril",
+        "Mai",
+        "Juin",
+        "Juillet",
+        "Août",
+        "Septembre",
+        "Octobre",
+        "Novembre",
+        "Décembre"
+    ]
 
+    FRENCH_DAYS = [
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi",
+        "Dimanche"
+    ]
     def __init__(self, force_get_event: bool = False):
         self.subscribers = Subscribers()
         self.subscribers.get_events(force_get_event)
+
+    @staticmethod
+    def _date_to_str(date: datetime):
+        return f"{BeerAgenda.FRENCH_DAYS[date.weekday()]} {date.day} {BeerAgenda.FRENCH_MONTHS[date.month-1]}"
 
     def _prepare_dates(self, start: datetime = TODAY, stop: datetime = None):
         if start is not None and stop is not None:
@@ -25,13 +50,13 @@ class BeerAgenda:
             days_ahead = 6 - start.weekday()
             stop = start + timedelta(days_ahead)
 
-        self.start = start
-        self.stop = stop
+        self.start = start.replace(hour=0, minute=0)
+        self.stop = stop.replace(hour=23, minute=59)
 
         dates = [start + timedelta(days=x) for x in range((stop-start).days + 1)]
         self.dates = OrderedDict()
         for date in dates:
-            self.dates[date.strftime(BeerAgenda.DATE_FORMAT)] = []
+            self.dates[BeerAgenda._date_to_str(date)] = []
 
     def create_beer_agenda(
             self, start: datetime | None = TODAY, stop: datetime | None = None,
@@ -42,11 +67,11 @@ class BeerAgenda:
                 continue
             for event in subscriber.events:
                 if event.date <= self.stop and event.date >= self.start:
-                    self.dates[event.date.strftime(BeerAgenda.DATE_FORMAT)].append(event)
+                    self.dates[BeerAgenda._date_to_str(event.date)].append(event)
         self._dumps_beer_agenda(beer_agenda_file_path)
 
     def _dumps_beer_agenda(self, beer_agenda_file_path):
-        beer_agenda_txt = '\n'.join([f"# {str_date}\n"+"\n".join([f"- {event.to_markdown()}" for event in sorted(events, key=lambda x: x.date)])
+        beer_agenda_txt = '\n\n'.join([f"# {str_date}\n"+"\n".join([f"- {event.to_markdown()}" for event in sorted(events, key=lambda x: x.date)])
                                     for str_date, events in self.dates.items()])
         with open(beer_agenda_file_path, "w", encoding="utf-8") as file_stream:
             file_stream.write(beer_agenda_txt)
