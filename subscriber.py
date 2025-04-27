@@ -70,7 +70,7 @@ class Event:
         return ' '.join(event_md).replace(' ,', ',')
 
     def to_whatsapp(self) -> str:
-        event_md = f"*{self.name}* organisé par {self.subscriber.display_name} au {self.address}. \n\t{self.link}"
+        event_md = f"*{self.name}* organisé par *{self.subscriber.display_name}*"
         date = self._get_pretty_hour()
         if date:
             return f"{date} {event_md}"

@@ -7,7 +7,7 @@ from selenium.common.exceptions import WebDriverException
 
 
 class Driver:
-    def __init__(self, chromedriver_executable_path: str = "/usr/bin/chromedriver/chromedriver"):
+    def __init__(self, chromedriver_executable_path: str = "/usr/bin/chromedriver"):
         service = Service(executable_path=chromedriver_executable_path)
         options = webdriver.ChromeOptions()
         self._driver = webdriver.Chrome(service=service, options=options)
