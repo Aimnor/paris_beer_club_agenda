@@ -70,9 +70,13 @@ class BeerAgenda:
                     self.dates[BeerAgenda._date_to_str(event.date)].append(event)
         self._dumps_beer_agenda(beer_agenda_file_path)
 
-    def _dumps_beer_agenda(self, beer_agenda_file_path):
-        beer_agenda_txt = '\n\n'.join([f"# {str_date}\n"+"\n".join([f"- {event.to_markdown()}" for event in sorted(events, key=lambda x: x.date)])
-                                    for str_date, events in self.dates.items()])
+    def _dumps_beer_agenda(self, beer_agenda_file_path, type: str = "whatsapp"):
+        if type == "whatsapp":
+            beer_agenda_txt = '\n\n'.join([f"*{str_date}*\n"+"\n".join([f"- {event.to_whatsapp()}" for event in sorted(events, key=lambda x: x.date)])
+                                           for str_date, events in self.dates.items()])
+        elif type == "markdown":
+            beer_agenda_txt = '\n\n'.join([f"# {str_date}\n"+"\n".join([f"- {event.to_markdown()}" for event in sorted(events, key=lambda x: x.date)])
+                                           for str_date, events in self.dates.items()])
         with open(beer_agenda_file_path, "w", encoding="utf-8") as file_stream:
             file_stream.write(beer_agenda_txt)
 

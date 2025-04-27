@@ -69,6 +69,13 @@ class Event:
             return f"{date} {event_md}"
         return ' '.join(event_md).replace(' ,', ',')
 
+    def to_whatsapp(self) -> str:
+        event_md = f"*{self.name}* organisé par {self.subscriber.display_name} au {self.address}. \n\t{self.link}"
+        date = self._get_pretty_hour()
+        if date:
+            return f"{date} {event_md}"
+        return ' '.join(event_md).replace(' ,', ',')
+
     def __eq__(self, other: Event):
         return self.name == other.name and self.date == other.date and self.address == other.address and self.subscriber == other.subscriber
 
