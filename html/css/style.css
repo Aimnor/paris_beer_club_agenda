@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+.professional {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.row {
+    clear: both
+}
+
+.column {
+    width: 50%;
+    float: left;
+}
