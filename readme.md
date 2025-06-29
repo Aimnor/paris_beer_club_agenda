@@ -38,3 +38,6 @@ pip install -r requirements.txt
 source venv/bin/activate
 python main.py
 ```
+
+
+/usr/bin/google-chrome-stable --user-data-dir="/tmp/chrome_dev_test" --disable-web-security --disable-gpu
