@@ -14,6 +14,18 @@
         "page_type": "Bar"
     },
     {
+        "name": "BEER Paris",
+        "relative_url": "BEER.Paris.Cave",
+        "display_name": "le BEER Paris",
+        "email": "max@beerparis.com",
+        "phone": "01 43 48 71 63",
+        "address": "3 rue de la forge royale, Paris, France",
+        "urls": [
+            "beerparis.com"
+        ],
+        "page_type": "Magasin spécialisé dans la vente d’alcools"
+    },
+    {
         "name": "Bières Cultes",
         "relative_url": "bierescultes",
         "display_name": "Bières Cultes",
@@ -97,6 +109,19 @@
         "page_type": "Brasserie"
     },
     {
+        "name": "Brasserie Parisis",
+        "relative_url": "brasserieparisis",
+        "display_name": "la Brasserie Parisis",
+        "email": "",
+        "phone": "01 60 46 62 33",
+        "address": "3 rue René Dumont, Combs-la-Ville, France",
+        "urls": [
+            "contact@brasserie-parisis.com",
+            "brasserie-parisis.com"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
         "name": "Café Mama Kin",
         "relative_url": "cafemamakin",
         "display_name": "le Café Mama Kin",
@@ -117,6 +142,30 @@
             "fauvebiere.com/pages/cuves-de-fauve"
         ],
         "page_type": "Restaurant"
+    },
+    {
+        "name": "Dr Feelgood - Rock Beer Temple",
+        "relative_url": "rockbeertemple",
+        "display_name": "le Dr Feelgood - Rock Beer Temple",
+        "email": "",
+        "phone": "",
+        "address": "34 rue Keller, Paris, France",
+        "urls": [
+            "linktr.ee/rockbeertemple"
+        ],
+        "page_type": "Bar"
+    },
+    {
+        "name": "Fédération Française de l'Apéritif",
+        "relative_url": "ffaperitif",
+        "display_name": "la Fédération Française de l'Apéritif",
+        "email": "contact@ffaperitif.fr",
+        "phone": "",
+        "address": "",
+        "urls": [
+            "ffaperitif.fr"
+        ],
+        "page_type": "Bar"
     },
     {
         "name": "HAZY",
@@ -190,6 +239,28 @@
         "page_type": "Bar à bières"
     },
     {
+        "name": "les bières de Belleville",
+        "relative_url": "lesbieresdeBelleville",
+        "display_name": "les bières de Belleville",
+        "email": "lesbieresdebelleville@gmail.com",
+        "phone": "06 87 31 78 68",
+        "address": "9 rue Jean-Baptiste Dumay, Paris, France",
+        "urls": [],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Liquiderie Cave (Liquiderie Cave)",
+        "relative_url": "liquiderie.cave",
+        "display_name": "la Liquiderie Cave",
+        "email": "",
+        "phone": "09 52 70 24 44",
+        "address": "",
+        "urls": [
+            "liquiderie.com"
+        ],
+        "page_type": "Bar à vin"
+    },
+    {
         "name": "Mashrooms",
         "relative_url": "brasseriemashroomsparis",
         "display_name": "Mashrooms",
@@ -202,6 +273,41 @@
         "page_type": "Magasin spécialisé dans la vente d’alcools"
     },
     {
+        "name": "Microbrasserie Second Degré",
+        "relative_url": "microbrasserie.seconddegre",
+        "display_name": "la Microbrasserie Second Degré",
+        "email": "biere@auseconddegre.com",
+        "phone": "09 74 64 00 55",
+        "address": "10 rue de l'église, Magny-le-Hongre, France",
+        "urls": [
+            "privateaser.com/lieu/49348-microbrasserie-second-degre",
+            "auseconddegre.shop"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Nautilus Bar Paris",
+        "relative_url": "Nautilusbarparis",
+        "display_name": "le Nautilus Bar Paris",
+        "email": "contact@nautilusparis.com",
+        "phone": "09 51 94 54 59",
+        "address": "5 rue de Chateaudun, Paris, France",
+        "urls": [
+            "nautilusparis.com"
+        ],
+        "page_type": "Bar à cocktails"
+    },
+    {
+        "name": "NUKA Brewing",
+        "relative_url": "nukabrewing",
+        "display_name": "NUKA Brewing",
+        "email": "",
+        "phone": "",
+        "address": "Paris, France",
+        "urls": [],
+        "page_type": "Brasserie"
+    },
+    {
         "name": "Octopussy Paris",
         "relative_url": "Octo.bar.Paris",
         "display_name": "l'Octopussy Paris",
@@ -212,6 +318,29 @@
             "octopussyparis.com"
         ],
         "page_type": "Bar"
+    },
+    {
+        "name": "Outland",
+        "relative_url": "brasserieoutland",
+        "display_name": "Outland",
+        "email": "",
+        "phone": "01 74 50 17 37",
+        "address": "54, rue André Tessier, Fontenay-sous-Bois, France",
+        "urls": [
+            "contact@outland-beer.com",
+            "outland-beer.com"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Taverne des Korrigans",
+        "relative_url": "tavernekorrigans",
+        "display_name": "la Taverne des Korrigans",
+        "email": "",
+        "phone": "01 43 26 96 59",
+        "address": "42 Rue du Cardinal Lemoine, Paris, France",
+        "urls": [],
+        "page_type": "Troquet"
     },
     {
         "name": "We Are Brewers - WAB",
@@ -248,6 +377,16 @@
         "page_type": "Bar à bières"
     },
     {
+        "name": "Beer’s Hops",
+        "relative_url": "people/Beers-Hops/100086151175567",
+        "display_name": "le Beer’s Hops",
+        "email": "contact.beershops@gmail.com",
+        "phone": "06 71 52 94 93",
+        "address": "10 Place Jean-Baptiste Lully, Saint-Cyr-l'École, France",
+        "urls": [],
+        "page_type": "Bar à bières"
+    },
+    {
         "name": "Kilomètre Zéro",
         "relative_url": "people/Kilomètre-Zéro/100094598254148",
         "display_name": "le Kilomètre Zéro",
@@ -259,6 +398,16 @@
             "km-0.bar"
         ],
         "page_type": "Bar"
+    },
+    {
+        "name": "La Cave Du Poney Qui Tousse",
+        "relative_url": "people/La-Cave-Du-Poney-Qui-Tousse/100090996006620",
+        "display_name": "la Cave Du Poney Qui Tousse",
+        "email": "lcdpqt@gmail.com",
+        "phone": "",
+        "address": "10 rue lemercier, Paris, France",
+        "urls": [],
+        "page_type": "Bar à bières"
     },
     {
         "name": "Luppolo",
@@ -274,6 +423,28 @@
         "page_type": "Bar à bières"
     },
     {
+        "name": "Soquee Brewing",
+        "relative_url": "people/Soquee-Brewing/100089211693934",
+        "display_name": "Soquee Brewing",
+        "email": "soqueebrewing@gmail.com",
+        "phone": "06 89 26 26 32",
+        "address": "157 boulevard Davout, Paris, France",
+        "urls": [],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "3ienchs",
+        "relative_url": "3ienchs",
+        "display_name": "les 3ienchs",
+        "email": "contact@3ienchs.com",
+        "phone": "06 65 46 94 02",
+        "address": "2bis rue Vassal, Saint-Maur-des-Fossés, France",
+        "urls": [
+            "3ienchs.fr"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
         "name": "L'Atalante",
         "relative_url": "atalanteourcq",
         "display_name": "L'Atalante",
@@ -286,6 +457,91 @@
         "page_type": "Bar"
     },
     {
+        "name": "BBP Canal",
+        "relative_url": "bbpcanal",
+        "display_name": "le BBP Canal",
+        "email": "Canal@beerproject.be",
+        "phone": "",
+        "address": "47bis rue Bichat, Paris, France",
+        "urls": [
+            "beerproject.be/taproom/canal"
+        ],
+        "page_type": "Bar à bières"
+    },
+    {
+        "name": "Bières et fromages",
+        "relative_url": "bieresetfromages",
+        "display_name": "Bières et fromages",
+        "email": "bieresefromages@gmail.com",
+        "phone": "06 09 78 76 02",
+        "address": "",
+        "urls": [
+            "linktr.ee/bieresetfromages"
+        ],
+        "page_type": "Shopping et vente au détail"
+    },
+    {
+        "name": "BLACK SHEEP Society",
+        "relative_url": "blacksheepsocietyparis",
+        "display_name": "le BLACK SHEEP Society",
+        "email": "blacksheepsocietyparis@gmail.com",
+        "phone": "",
+        "address": "15 rue daval, Paris, France",
+        "urls": [
+            "blacksheepsocietyparis.com"
+        ],
+        "page_type": "Bar"
+    },
+    {
+        "name": "Brasserie Artemus",
+        "relative_url": "brasserieartemus",
+        "display_name": "la Brasserie Artemus",
+        "email": "",
+        "phone": "06 61 98 66 71",
+        "address": "24 Ter Avenue des deux clochers, Limeil-Brévannes, France",
+        "urls": [
+            "contact@brasserie-artemus.fr",
+            "brasserie-artemus.fr"
+        ],
+        "page_type": "Alimentation et boissons"
+    },
+    {
+        "name": "Brasserie de l'Être",
+        "relative_url": "brasseriedeletre",
+        "display_name": "la Brasserie de l'Être",
+        "email": "contact@brasseriedeletre.paris",
+        "phone": "07 44 58 79 63",
+        "address": "7ter rue Duvergier, Paris, France",
+        "urls": [
+            "brasseriedeletre.paris"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Brasserie des Regards",
+        "relative_url": "brasseriedesregards",
+        "display_name": "la Brasserie des Regards",
+        "email": "brasseriedesregards@gmail.com",
+        "phone": "",
+        "address": "28 Rue de l'Ermitage, Paris, France",
+        "urls": [
+            "helloasso.com/associations/brasserie-associative-des-regards"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Brasserie Nemeto",
+        "relative_url": "brasserienemeto",
+        "display_name": "la Brasserie Nemeto",
+        "email": "contact@brasserienemeto.fr",
+        "phone": "01 46 95 44 25",
+        "address": "4 rue Silvy, Nanterre, France",
+        "urls": [
+            "brasserienemeto.fr"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
         "name": "Brasserie Patoche",
         "relative_url": "brasseriepatoche",
         "display_name": "la Brasserie Patoche",
@@ -296,6 +552,19 @@
             "brasseriepatoche.fr"
         ],
         "page_type": "Bar à bières"
+    },
+    {
+        "name": "Brasserie Toussaint",
+        "relative_url": "brasserietoussaint",
+        "display_name": "la Brasserie Toussaint",
+        "email": "",
+        "phone": "",
+        "address": "2 avenue de l'Europe, Noisy-le-Roi, France",
+        "urls": [
+            "easybeer.shop/boutique/brasserie-toussaint",
+            "brasserietoussaint.com"
+        ],
+        "page_type": "Entreprise locale"
     },
     {
         "name": "Carburant",
@@ -332,6 +601,16 @@
         "page_type": "Bar  Club de loisirs / club-house  Restaurant asiatique"
     },
     {
+        "name": "Crazy Hops",
+        "relative_url": "CrazyHops77",
+        "display_name": "le Crazy Hops",
+        "email": "crazyhops77@gmail.com",
+        "phone": "06 70 29 54 98",
+        "address": "Hameau Villeniard. Rue de la Tuilerie, Vaux-sur-Lunain, France",
+        "urls": [],
+        "page_type": "Brasserie"
+    },
+    {
         "name": "Delaville",
         "relative_url": "delavillecafe",
         "display_name": "Delaville",
@@ -343,6 +622,16 @@
             "twitter.com/delavilleparis",
             "delavillecafe.com"
         ],
+        "page_type": "Bar"
+    },
+    {
+        "name": "Dr Feelgood Rocket",
+        "relative_url": "drfeelgoodrocket",
+        "display_name": "le Dr Feelgood Rocket",
+        "email": "drfeelgoodrockbar@gmail.com",
+        "phone": "06 95 32 93 01",
+        "address": "74 rue de la roquette, Paris, France",
+        "urls": [],
         "page_type": "Bar"
     },
     {
@@ -371,6 +660,28 @@
         "page_type": "Bar"
     },
     {
+        "name": "La Bouledogue",
+        "relative_url": "labouledogue",
+        "display_name": "la Bouledogue",
+        "email": "contact@labouledogue.com",
+        "phone": "",
+        "address": "Zone industrielle de la Prairie, rue de la Prairie, Villebon-sur-Yvette, France",
+        "urls": [
+            "labouledogue.fr"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "La Cave Degré",
+        "relative_url": "lacavedegre",
+        "display_name": "la Cave Degré",
+        "email": "degrealcool@gmail.com",
+        "phone": "01 71 37 36 09",
+        "address": "22 rue des plantes, Paris, France",
+        "urls": [],
+        "page_type": "Magasin spécialisé dans la vente d’alcools"
+    },
+    {
         "name": "La Guinche bières des bords de Marne",
         "relative_url": "LaGuinche.Bieres",
         "display_name": "la Guinche bières des bords de Marne",
@@ -393,6 +704,18 @@
         "page_type": "Magasin spécialisé dans la vente d’alcools"
     },
     {
+        "name": "Le Bar commun",
+        "relative_url": "lebarcommun",
+        "display_name": "le Bar commun",
+        "email": "equipe@lebarcommun.fr",
+        "phone": "",
+        "address": "135, rue des Poissonniers, Paris, France",
+        "urls": [
+            "lebarcommun.fr"
+        ],
+        "page_type": "Organisation à but non lucratif"
+    },
+    {
         "name": "Le Hasard Ludique",
         "relative_url": "LeHasardLudique",
         "display_name": "le Hasard Ludique",
@@ -405,6 +728,40 @@
         "page_type": "Salle de concert"
     },
     {
+        "name": "Bar Le Village",
+        "relative_url": "levillage",
+        "display_name": "le Bar Le Village",
+        "email": "barlevillage@gmail.com",
+        "phone": "06 09 35 22 68",
+        "address": "56 rue de la Montagne Sainte Genevieve, Paris, France",
+        "urls": [],
+        "page_type": "Bar"
+    },
+    {
+        "name": "L'intrépide bar",
+        "relative_url": "lintrepide.bar",
+        "display_name": "L'intrépide bar",
+        "email": "lintrepide.bar@gmail.com",
+        "phone": "09 74 73 56 34",
+        "address": "37 rue pierre fontaine , Paris, France",
+        "urls": [
+            "lintrepidebar.fr"
+        ],
+        "page_type": "Bar à cocktails"
+    },
+    {
+        "name": "Liquiderie Bar (Liquiderie Bar)",
+        "relative_url": "Liquiderie.Bar",
+        "display_name": "le Liquiderie Bar",
+        "email": "",
+        "phone": "09 72 91 36 77",
+        "address": "",
+        "urls": [
+            "liquiderie.com"
+        ],
+        "page_type": "Bar à bières"
+    },
+    {
         "name": "Micro-brasserie Balthazar",
         "relative_url": "MBBalthazar",
         "display_name": "la Micro-brasserie Balthazar",
@@ -413,6 +770,52 @@
         "address": "90 boulevard de Menilmontant, Paris, France",
         "urls": [],
         "page_type": "Bar à bières"
+    },
+    {
+        "name": "O'clock Brewing",
+        "relative_url": "oclockbrewing",
+        "display_name": "O'clock Brewing",
+        "email": "oclockbrewing@gmail.com",
+        "phone": "09 51 53 11 22",
+        "address": "3 rue Georges Méliès, Bois-d'Arcy, France",
+        "urls": [
+            "oclockbrewing.fr"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "One Cloud",
+        "relative_url": "onecloud.beer",
+        "display_name": "One Cloud",
+        "email": "",
+        "phone": "",
+        "address": "",
+        "urls": [],
+        "page_type": "Magasin spécialisé dans la vente d’alcools"
+    },
+    {
+        "name": "Paname Brewing Company",
+        "relative_url": "panamebrewingcompany",
+        "display_name": "le Paname Brewing Company",
+        "email": "info@panamebrewingcompany.com",
+        "phone": "",
+        "address": "137 Av. du Président Wilson, Saint-Denis, France",
+        "urls": [
+            "panamebrewingcompany.com/saint-denis"
+        ],
+        "page_type": "Brasserie"
+    },
+    {
+        "name": "Boneless. Brewing Company",
+        "relative_url": "people/Boneless-Brewing-Company/61568050211651",
+        "display_name": "Boneless. Brewing Company",
+        "email": "contact@kiffkulture.com",
+        "phone": "",
+        "address": "",
+        "urls": [
+            "bonelessbrewing.com"
+        ],
+        "page_type": "Brasserie"
     },
     {
         "name": "Cave Maltorama (82 boulevard de Champigny, Saint-Maur-des-Fossés)",
@@ -433,5 +836,39 @@
         "address": "",
         "urls": [],
         "page_type": ""
+    },
+    {
+        "name": "L’Ecole B.",
+        "relative_url": "people/LEcole-B/61566507527596",
+        "display_name": "L’Ecole Buissonière",
+        "email": "",
+        "phone": "",
+        "address": "",
+        "urls": [],
+        "page_type": "Restaurant"
+    },
+    {
+        "name": "THE BEER FACTORY",
+        "relative_url": "thebeerfactory",
+        "display_name": "THE BEER FACTORY",
+        "email": "thebeerfactory@rhombuscx.com",
+        "phone": "",
+        "address": "",
+        "urls": [
+            "the-beer-factory.com"
+        ],
+        "page_type": "Bar"
+    },
+    {
+        "name": "The Great Brewery",
+        "relative_url": "thegreatbrewery",
+        "display_name": "The Great Brewery",
+        "email": "contact@thegb.fr",
+        "phone": "07 49 31 02 08",
+        "address": "2, rue du Lieutenant Ohresser, Nogent-sur-Marne, France",
+        "urls": [
+            "thegreatbrewery.fr"
+        ],
+        "page_type": "Boutique"
     }
 ]
