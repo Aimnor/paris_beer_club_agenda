@@ -11,7 +11,8 @@
             "linktr.ee/eldrunken",
             "ledrunken.com"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "BEER Paris",
@@ -23,7 +24,8 @@
         "urls": [
             "beerparis.com"
         ],
-        "page_type": "Magasin spécialisé dans la vente d’alcools"
+        "page_type": "Magasin spécialisé dans la vente d’alcools",
+        "subscribed": false
     },
     {
         "name": "Bières Cultes",
@@ -35,7 +37,8 @@
         "urls": [
             "bierescultes.fr"
         ],
-        "page_type": "Magasin spécialisé dans la vente d’alcools"
+        "page_type": "Magasin spécialisé dans la vente d’alcools",
+        "subscribed": true
     },
     {
         "name": "Biérocratie",
@@ -47,7 +50,8 @@
         "urls": [
             "bierocratie.com"
         ],
-        "page_type": "Magasin spécialisé dans la vente d’alcools"
+        "page_type": "Magasin spécialisé dans la vente d’alcools",
+        "subscribed": true
     },
     {
         "name": "Black Mad Crawler",
@@ -57,7 +61,8 @@
         "phone": "09 54 77 33 40",
         "address": "140 Boulevard Richard Lenoir, Paris, France",
         "urls": [],
-        "page_type": ""
+        "page_type": "",
+        "subscribed": true
     },
     {
         "name": "Brasserie Croix de Chavaux",
@@ -70,7 +75,8 @@
             "fr.ulule.com/croix-de-chavaux/?utm_campaign=presale_194145&utm_source=shared-from-Ulule-success-modal-on---http.referer--&utm_medium=uluid_1471462",
             "croixdechavaux.com"
         ],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": true
     },
     {
         "name": "Brasserie d'Orville",
@@ -82,7 +88,8 @@
         "urls": [
             "brasseriedorville.com"
         ],
-        "page_type": "Bar  Bar à bières  Brasserie"
+        "page_type": "Bar  Bar à bières  Brasserie",
+        "subscribed": true
     },
     {
         "name": "Brasserie de la Goutte d'Or",
@@ -94,7 +101,8 @@
         "urls": [
             "brasserielagouttedor.com"
         ],
-        "page_type": "Alimentation et boissons"
+        "page_type": "Alimentation et boissons",
+        "subscribed": true
     },
     {
         "name": "Brasserie du Grand Paris",
@@ -106,7 +114,8 @@
         "urls": [
             "bgp.paris"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": true
     },
     {
         "name": "Brasserie Parisis",
@@ -119,7 +128,8 @@
             "contact@brasserie-parisis.com",
             "brasserie-parisis.com"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "Café Mama Kin",
@@ -129,7 +139,8 @@
         "phone": "",
         "address": "13, rue de Thionville, Paris, France",
         "urls": [],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "Les Cuves De Fauve",
@@ -141,7 +152,8 @@
         "urls": [
             "fauvebiere.com/pages/cuves-de-fauve"
         ],
-        "page_type": "Restaurant"
+        "page_type": "Restaurant",
+        "subscribed": true
     },
     {
         "name": "Dr Feelgood - Rock Beer Temple",
@@ -153,7 +165,8 @@
         "urls": [
             "linktr.ee/rockbeertemple"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": false
     },
     {
         "name": "Fédération Française de l'Apéritif",
@@ -165,7 +178,8 @@
         "urls": [
             "ffaperitif.fr"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": false
     },
     {
         "name": "HAZY",
@@ -178,7 +192,8 @@
             "hazy.paris",
             "hazy.paris"
         ],
-        "page_type": ""
+        "page_type": "",
+        "subscribed": true
     },
     {
         "name": "La Binouze Paris",
@@ -190,7 +205,8 @@
         "urls": [
             "labinouze.fr"
         ],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": true
     },
     {
         "name": "La Fine Mousse",
@@ -202,7 +218,8 @@
         "urls": [
             "lafinemousse.fr"
         ],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": true
     },
     {
         "name": "La Robe & La Mousse",
@@ -214,7 +231,8 @@
         "urls": [
             "lafinemousse.fr"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "La ruée vers l'orge",
@@ -224,7 +242,8 @@
         "phone": "01 49 96 53 70",
         "address": "6 rue des fontaines du Temple, Paris, France",
         "urls": [],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": true
     },
     {
         "name": "Le Supercoin",
@@ -236,7 +255,8 @@
         "urls": [
             "supercoin.net"
         ],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": true
     },
     {
         "name": "les bières de Belleville",
@@ -246,7 +266,8 @@
         "phone": "06 87 31 78 68",
         "address": "9 rue Jean-Baptiste Dumay, Paris, France",
         "urls": [],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "Liquiderie Cave (Liquiderie Cave)",
@@ -258,7 +279,8 @@
         "urls": [
             "liquiderie.com"
         ],
-        "page_type": "Bar à vin"
+        "page_type": "Bar à vin",
+        "subscribed": false
     },
     {
         "name": "Mashrooms",
@@ -270,7 +292,8 @@
         "urls": [
             "mashrooms.fr"
         ],
-        "page_type": "Magasin spécialisé dans la vente d’alcools"
+        "page_type": "Magasin spécialisé dans la vente d’alcools",
+        "subscribed": true
     },
     {
         "name": "Microbrasserie Second Degré",
@@ -283,7 +306,8 @@
             "privateaser.com/lieu/49348-microbrasserie-second-degre",
             "auseconddegre.shop"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "Nautilus Bar Paris",
@@ -295,7 +319,8 @@
         "urls": [
             "nautilusparis.com"
         ],
-        "page_type": "Bar à cocktails"
+        "page_type": "Bar à cocktails",
+        "subscribed": false
     },
     {
         "name": "NUKA Brewing",
@@ -305,7 +330,8 @@
         "phone": "",
         "address": "Paris, France",
         "urls": [],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "Octopussy Paris",
@@ -317,7 +343,8 @@
         "urls": [
             "octopussyparis.com"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "Outland",
@@ -330,7 +357,8 @@
             "contact@outland-beer.com",
             "outland-beer.com"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "Taverne des Korrigans",
@@ -340,7 +368,8 @@
         "phone": "01 43 26 96 59",
         "address": "42 Rue du Cardinal Lemoine, Paris, France",
         "urls": [],
-        "page_type": "Troquet"
+        "page_type": "Troquet",
+        "subscribed": false
     },
     {
         "name": "We Are Brewers - WAB",
@@ -350,7 +379,8 @@
         "phone": "",
         "address": "16 boulevard Jules Ferry, Paris, France",
         "urls": [],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "Hall's Beer Tavern",
@@ -362,7 +392,8 @@
         "urls": [
             "hallsbeertavern.fr"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "BaB OPERA - Bar et Cave à bières Paris",
@@ -374,7 +405,8 @@
         "urls": [
             "barabieresparis.com"
         ],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": true
     },
     {
         "name": "Beer’s Hops",
@@ -384,7 +416,8 @@
         "phone": "06 71 52 94 93",
         "address": "10 Place Jean-Baptiste Lully, Saint-Cyr-l'École, France",
         "urls": [],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": false
     },
     {
         "name": "Kilomètre Zéro",
@@ -397,7 +430,8 @@
             "contact@km-0.bar",
             "km-0.bar"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "La Cave Du Poney Qui Tousse",
@@ -407,7 +441,8 @@
         "phone": "",
         "address": "10 rue lemercier, Paris, France",
         "urls": [],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": false
     },
     {
         "name": "Luppolo",
@@ -420,7 +455,8 @@
             "linktr.ee/luppolobar",
             "luppolo-bar.fr"
         ],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": true
     },
     {
         "name": "Soquee Brewing",
@@ -430,7 +466,8 @@
         "phone": "06 89 26 26 32",
         "address": "157 boulevard Davout, Paris, France",
         "urls": [],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "3ienchs",
@@ -442,7 +479,8 @@
         "urls": [
             "3ienchs.fr"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "L'Atalante",
@@ -454,7 +492,8 @@
         "urls": [
             "atalanteourcq.fr"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "BBP Canal",
@@ -466,7 +505,8 @@
         "urls": [
             "beerproject.be/taproom/canal"
         ],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": false
     },
     {
         "name": "Bières et fromages",
@@ -478,7 +518,8 @@
         "urls": [
             "linktr.ee/bieresetfromages"
         ],
-        "page_type": "Shopping et vente au détail"
+        "page_type": "Shopping et vente au détail",
+        "subscribed": false
     },
     {
         "name": "BLACK SHEEP Society",
@@ -490,7 +531,8 @@
         "urls": [
             "blacksheepsocietyparis.com"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": false
     },
     {
         "name": "Brasserie Artemus",
@@ -503,7 +545,8 @@
             "contact@brasserie-artemus.fr",
             "brasserie-artemus.fr"
         ],
-        "page_type": "Alimentation et boissons"
+        "page_type": "Alimentation et boissons",
+        "subscribed": false
     },
     {
         "name": "Brasserie de l'Être",
@@ -515,7 +558,8 @@
         "urls": [
             "brasseriedeletre.paris"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "Brasserie des Regards",
@@ -527,7 +571,8 @@
         "urls": [
             "helloasso.com/associations/brasserie-associative-des-regards"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "Brasserie Nemeto",
@@ -539,7 +584,8 @@
         "urls": [
             "brasserienemeto.fr"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "Brasserie Patoche",
@@ -551,7 +597,8 @@
         "urls": [
             "brasseriepatoche.fr"
         ],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": true
     },
     {
         "name": "Brasserie Toussaint",
@@ -564,7 +611,8 @@
             "easybeer.shop/boutique/brasserie-toussaint",
             "brasserietoussaint.com"
         ],
-        "page_type": "Entreprise locale"
+        "page_type": "Entreprise locale",
+        "subscribed": false
     },
     {
         "name": "Carburant",
@@ -574,7 +622,8 @@
         "phone": "06 35 14 68 05",
         "address": "60 rue de Lancry, Paris, France",
         "urls": [],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "La Caisse de Bières (21 rue Kleber, Courbevoie)",
@@ -586,7 +635,8 @@
         "urls": [
             "lacaissedebieres.fr"
         ],
-        "page_type": ""
+        "page_type": "",
+        "subscribed": true
     },
     {
         "name": "Communale Saint-Ouen",
@@ -598,7 +648,8 @@
         "urls": [
             "communalesaintouen.com"
         ],
-        "page_type": "Bar  Club de loisirs / club-house  Restaurant asiatique"
+        "page_type": "Bar  Club de loisirs / club-house  Restaurant asiatique",
+        "subscribed": true
     },
     {
         "name": "Crazy Hops",
@@ -608,7 +659,8 @@
         "phone": "06 70 29 54 98",
         "address": "Hameau Villeniard. Rue de la Tuilerie, Vaux-sur-Lunain, France",
         "urls": [],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "Delaville",
@@ -622,7 +674,8 @@
             "twitter.com/delavilleparis",
             "delavillecafe.com"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "Dr Feelgood Rocket",
@@ -632,7 +685,8 @@
         "phone": "06 95 32 93 01",
         "address": "74 rue de la roquette, Paris, France",
         "urls": [],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": false
     },
     {
         "name": "Gush Bar",
@@ -645,7 +699,8 @@
             "contact@gush-bar.com",
             "gush-bar.com"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "Hoppy Corner",
@@ -657,7 +712,8 @@
         "urls": [
             "hoppycorner.com"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": true
     },
     {
         "name": "La Bouledogue",
@@ -669,7 +725,8 @@
         "urls": [
             "labouledogue.fr"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "La Cave Degré",
@@ -679,7 +736,8 @@
         "phone": "01 71 37 36 09",
         "address": "22 rue des plantes, Paris, France",
         "urls": [],
-        "page_type": "Magasin spécialisé dans la vente d’alcools"
+        "page_type": "Magasin spécialisé dans la vente d’alcools",
+        "subscribed": false
     },
     {
         "name": "La Guinche bières des bords de Marne",
@@ -691,7 +749,8 @@
         "urls": [
             "laguinche.net"
         ],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": true
     },
     {
         "name": "La Petite Patrie",
@@ -701,7 +760,8 @@
         "phone": "09 87 71 90 86",
         "address": "12 rue Mouton-Duvernet, Paris, France",
         "urls": [],
-        "page_type": "Magasin spécialisé dans la vente d’alcools"
+        "page_type": "Magasin spécialisé dans la vente d’alcools",
+        "subscribed": true
     },
     {
         "name": "Le Bar commun",
@@ -713,7 +773,8 @@
         "urls": [
             "lebarcommun.fr"
         ],
-        "page_type": "Organisation à but non lucratif"
+        "page_type": "Organisation à but non lucratif",
+        "subscribed": false
     },
     {
         "name": "Le Hasard Ludique",
@@ -725,7 +786,8 @@
         "urls": [
             "lehasardludique.paris"
         ],
-        "page_type": "Salle de concert"
+        "page_type": "Salle de concert",
+        "subscribed": true
     },
     {
         "name": "Bar Le Village",
@@ -735,7 +797,8 @@
         "phone": "06 09 35 22 68",
         "address": "56 rue de la Montagne Sainte Genevieve, Paris, France",
         "urls": [],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": false
     },
     {
         "name": "L'intrépide bar",
@@ -747,7 +810,8 @@
         "urls": [
             "lintrepidebar.fr"
         ],
-        "page_type": "Bar à cocktails"
+        "page_type": "Bar à cocktails",
+        "subscribed": false
     },
     {
         "name": "Liquiderie Bar (Liquiderie Bar)",
@@ -759,7 +823,8 @@
         "urls": [
             "liquiderie.com"
         ],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": false
     },
     {
         "name": "Micro-brasserie Balthazar",
@@ -769,7 +834,8 @@
         "phone": "06 64 13 34 39",
         "address": "90 boulevard de Menilmontant, Paris, France",
         "urls": [],
-        "page_type": "Bar à bières"
+        "page_type": "Bar à bières",
+        "subscribed": true
     },
     {
         "name": "O'clock Brewing",
@@ -781,7 +847,8 @@
         "urls": [
             "oclockbrewing.fr"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "One Cloud",
@@ -791,7 +858,8 @@
         "phone": "",
         "address": "",
         "urls": [],
-        "page_type": "Magasin spécialisé dans la vente d’alcools"
+        "page_type": "Magasin spécialisé dans la vente d’alcools",
+        "subscribed": false
     },
     {
         "name": "Paname Brewing Company",
@@ -803,7 +871,8 @@
         "urls": [
             "panamebrewingcompany.com/saint-denis"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "Boneless. Brewing Company",
@@ -815,7 +884,8 @@
         "urls": [
             "bonelessbrewing.com"
         ],
-        "page_type": "Brasserie"
+        "page_type": "Brasserie",
+        "subscribed": false
     },
     {
         "name": "Cave Maltorama (82 boulevard de Champigny, Saint-Maur-des-Fossés)",
@@ -825,7 +895,8 @@
         "phone": "06 83 95 64 30",
         "address": "",
         "urls": [],
-        "page_type": ""
+        "page_type": "",
+        "subscribed": true
     },
     {
         "name": "I.B.U (I.B.U Petites Écuries)",
@@ -835,7 +906,8 @@
         "phone": "06 44 68 69 22",
         "address": "",
         "urls": [],
-        "page_type": ""
+        "page_type": "",
+        "subscribed": true
     },
     {
         "name": "L’Ecole B.",
@@ -845,7 +917,8 @@
         "phone": "",
         "address": "",
         "urls": [],
-        "page_type": "Restaurant"
+        "page_type": "Restaurant",
+        "subscribed": false
     },
     {
         "name": "THE BEER FACTORY",
@@ -857,7 +930,8 @@
         "urls": [
             "the-beer-factory.com"
         ],
-        "page_type": "Bar"
+        "page_type": "Bar",
+        "subscribed": false
     },
     {
         "name": "The Great Brewery",
@@ -869,6 +943,7 @@
         "urls": [
             "thegreatbrewery.fr"
         ],
-        "page_type": "Boutique"
+        "page_type": "Boutique",
+        "subscribed": false
     }
 ]

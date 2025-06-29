@@ -1,9 +1,9 @@
 # Paris Beer Club Agenda
-This repo is used to scrap events of Paris Beer Club pro subscribers
+This repo is used to scrap events of Paris Beer Club pro professionals
 
-Subscribers are for now listed in [this file](data/subscribers.json) based on PBC [followed accounts](https://www.facebook.com/parisbeerclub/following)
+Professionals are for now listed in [this file](data/professionals.json) based on PBC [followed accounts](https://www.facebook.com/parisbeerclub/following)
 
-Subscribers **MUST** have a public page for the parser to work.
+Professionals **MUST** have a public page for the parser to work.
 
 # Requirements
 Is is meant to be used on Linux (debian based) and needs chromedriver to work

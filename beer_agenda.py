@@ -4,7 +4,7 @@ import json
 from datetime import timedelta, datetime
 from collections import OrderedDict
 
-from subscriber import Subscribers, TODAY
+from professionals import Professionals, TODAY
 
 class BeerAgenda:
     FRENCH_MONTHS = [
@@ -31,14 +31,11 @@ class BeerAgenda:
         "Samedi",
         "Dimanche"
     ]
-    def __init__(self, force_get_event: bool = False, all_time_subscribers:bool = False):
-        if all_time_subscribers:
-            relative_paths_file = "data/all_time_subscribers.txt"
-            subscribers_file_path = "data/all_time_subscribers.json"
-            self.subscribers = Subscribers(relative_paths_file=relative_paths_file, subscribers_file_path=subscribers_file_path)
-        else:
-            self.subscribers = Subscribers()
-        self.subscribers.get_events(force_get_event)
+    def __init__(self, force_get_event: bool = False, all_professionals:bool = True):
+        self.all_professionals = all_professionals
+        self.professionals = Professionals(all_professionals)
+        # if all_professionals: TODO
+        self.professionals.get_events(force_get_event)
 
     @staticmethod
     def _date_to_str(date: datetime):
@@ -67,10 +64,10 @@ class BeerAgenda:
             self, start: datetime | None = TODAY, stop: datetime | None = None,
             beer_agenda_file_path: str = "output/beer_agenda.md"):
         self._prepare_dates(start, stop)
-        for subscriber in self.subscribers:
-            if not subscriber.events:
+        for professional in self.professionals:
+            if not professional.events or not professional.subscribed and not self.all_professionals:
                 continue
-            for event in subscriber.events:
+            for event in professional.events:
                 if event.date <= self.stop and event.date >= self.start:
                     self.dates[BeerAgenda._date_to_str(event.date)].append(event)
         self._dumps_beer_agenda(beer_agenda_file_path)
@@ -85,10 +82,10 @@ class BeerAgenda:
         with open(beer_agenda_file_path, "w", encoding="utf-8") as file_stream:
             file_stream.write(beer_agenda_txt)
 
-    def _dumps_all_events(self, subscribers_file_path):
-        with open(subscribers_file_path, "w", encoding="utf-8") as file_stream:
-            json.dump({subscriber.name: subscriber.events_to_dict()
-                      for subscriber in self.subscribers}, file_stream, indent=4, ensure_ascii=False)
+    def _dumps_all_events(self, professionals_file_path):
+        with open(professionals_file_path, "w", encoding="utf-8") as file_stream:
+            json.dump({professional.name: professional.events_to_dict()
+                      for professional in self.professionals}, file_stream, indent=4, ensure_ascii=False)
 
 
 if __name__ == "__main__":
@@ -100,12 +97,12 @@ if __name__ == "__main__":
     if argv_len >= 3:
         start = datetime.strptime(sys.argv[1], "%Y_%m_%d")
         stop = datetime.strptime(sys.argv[2], "%Y_%m_%d")
-    all_time_subscribers = False
+    all_professionals = False
     if argv_len >= 4:
         if sys.argv[3] == "full":
-            all_time_subscribers = True
+            all_professionals = True
             
-    ba = BeerAgenda(force_get_event=True, all_time_subscribers=all_time_subscribers)
+    ba = BeerAgenda(force_get_event=False, all_professionals=all_professionals)
     if len(sys.argv) == 1:
         ba.create_beer_agenda()
     else:
