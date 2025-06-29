@@ -4,7 +4,7 @@ import json
 from datetime import timedelta, datetime
 from collections import OrderedDict
 
-from professionals import Professionals, TODAY
+from .professionals import Professionals, TODAY
 
 class BeerAgenda:
     FRENCH_MONTHS = [

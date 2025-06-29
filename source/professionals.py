@@ -11,7 +11,7 @@ from selenium import webdriver
 
 from alive_progress import alive_it
 
-from driver import Driver
+from .driver import Driver
 
 FACEBOOK_URL = "https://www.facebook.com/"
 
