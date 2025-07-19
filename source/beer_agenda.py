@@ -6,6 +6,7 @@ from collections import OrderedDict
 
 from .professionals import Professionals, TODAY
 
+
 class BeerAgenda:
     FRENCH_MONTHS = [
         "Janvier",
@@ -31,7 +32,8 @@ class BeerAgenda:
         "Samedi",
         "Dimanche"
     ]
-    def __init__(self, force_get_event: bool = False, all_professionals:bool = True):
+
+    def __init__(self, force_get_event: bool = False, all_professionals: bool = True):
         self.all_professionals = all_professionals
         self.professionals = Professionals(all_professionals)
         # if all_professionals: TODO
@@ -55,7 +57,8 @@ class BeerAgenda:
         self.start = start.replace(hour=0, minute=0)
         self.stop = stop.replace(hour=23, minute=59)
 
-        dates = [start + timedelta(days=x) for x in range((stop-start).days + 1)]
+        dates = [start + timedelta(days=x)
+                 for x in range((stop-start).days + 1)]
         self.dates = OrderedDict()
         for date in dates:
             self.dates[BeerAgenda._date_to_str(date)] = []
@@ -69,7 +72,8 @@ class BeerAgenda:
                 continue
             for event in professional.events:
                 if event.date <= self.stop and event.date >= self.start:
-                    self.dates[BeerAgenda._date_to_str(event.date)].append(event)
+                    self.dates[BeerAgenda._date_to_str(
+                        event.date)].append(event)
         self._dumps_beer_agenda(beer_agenda_file_path)
 
     def _dumps_beer_agenda(self, beer_agenda_file_path, type: str = "whatsapp"):
@@ -86,24 +90,3 @@ class BeerAgenda:
         with open(professionals_file_path, "w", encoding="utf-8") as file_stream:
             json.dump({professional.name: professional.events_to_dict()
                       for professional in self.professionals}, file_stream, indent=4, ensure_ascii=False)
-
-
-if __name__ == "__main__":
-    import sys
-    argv_len = len(sys.argv)
-    if argv_len not in [1, 3, 4]:
-        print("Usage: `python main.py` or `python main.py start_date stop_date` or `python main.py start_date stop_date mode`")
-        sys.exit(1)
-    if argv_len >= 3:
-        start = datetime.strptime(sys.argv[1], "%Y_%m_%d")
-        stop = datetime.strptime(sys.argv[2], "%Y_%m_%d")
-    all_professionals = False
-    if argv_len >= 4:
-        if sys.argv[3] == "full":
-            all_professionals = True
-            
-    ba = BeerAgenda(force_get_event=False, all_professionals=all_professionals)
-    if len(sys.argv) == 1:
-        ba.create_beer_agenda()
-    else:
-        ba.create_beer_agenda(start, stop)

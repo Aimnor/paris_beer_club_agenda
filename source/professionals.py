@@ -94,11 +94,13 @@ class Event:
         for elem in soup.find_all('span'):
             match = Event.FACEBOOK_DATE_PATTERN.match(elem.text)
             if match:
-                date = datetime.strptime(f'{TODAY.year} '+' '.join(match.groups()), '%Y %b %d %I:%M %p')
+                date = datetime.strptime(
+                    f'{TODAY.year} '+' '.join(match.groups()), '%Y %b %d %I:%M %p')
 
                 event_elem = Event._get_even_elem(elem, elem.text)
 
-                links = event_elem.find_all('a', href=Event.FACEBOOK_LINK_PATTERN)
+                links = event_elem.find_all(
+                    'a', href=Event.FACEBOOK_LINK_PATTERN)
                 link = ""
                 if links:
                     link = links[0]['href']
@@ -163,7 +165,8 @@ class Professional:
         return f"{FACEBOOK_URL}{self.relative_url}"
 
     def get_events(self, driver: webdriver.Chrome):
-        self.events = Event.from_facebook_page(self, driver.get_soup(self.event_url))
+        self.events = Event.from_facebook_page(
+            self, driver.get_soup(self.event_url))
 
     @staticmethod
     def from_url() -> list[Professional]:
@@ -186,21 +189,25 @@ class Professional:
     ]
 
     def to_dict(self, get_events: bool = False) -> dict[str]:
-        my_dict = {key: self.__dict__[key] for key in Professional.KEY_DICT_LIST}
+        my_dict = {key: self.__dict__[key]
+                   for key in Professional.KEY_DICT_LIST}
         if get_events:
             my_dict["events"] = [event.to_dict() for event in self.events]
         return my_dict
 
     PHONE_NUMBER_PATTERN = re.compile(r"\d\d ?\d\d ?\d\d ?\d\d ?\d\d")
     ADDRESS_PATTERN = re.compile(r".*, France")
-    EMAIL_PATTERN = re.compile(r"^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$")
-    URL_PATTERN = re.compile(r"[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)")
+    EMAIL_PATTERN = re.compile(
+        r"^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$")
+    URL_PATTERN = re.compile(
+        r"[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)")
     INTRO_KEY = "Intro"
     PAGE_TYPE_KEY = "Page"
 
     @staticmethod
     def _get_relevant_data(soup: BeautifulSoup) -> dict[str]:
-        data = [data.strip() for data in soup.get_text(separator='\n').split('\n') if data.strip()]
+        data = [data.strip() for data in soup.get_text(
+            separator='\n').split('\n') if data.strip()]
         i_start = 0
         for i, data_str in enumerate(data):
             if "Informations de compte oubliées" in data_str:
@@ -256,12 +263,13 @@ class Professional:
 
 
 class Professionals:
-    def __init__(self, all_professionals = True):
+    def __init__(self, all_professionals=True):
         self.professionals_file_path = "data/professionals.json"
 
         with open(self.professionals_file_path, "r", encoding="utf-8") as file_stream:
-            self._professionals = [Professional(**sub) for sub in json.load(file_stream)]
-        
+            self._professionals = [Professional(
+                **sub) for sub in json.load(file_stream)]
+
         self.all_professionals = all_professionals
 
         self.events_file_path = "output/professionals.json"
@@ -272,9 +280,11 @@ class Professionals:
 
         self.modified_date = None
         if os.path.exists(self.events_file_path):
-            self.modified_date = datetime.fromtimestamp(os.path.getmtime(self.events_file_path))
+            self.modified_date = datetime.fromtimestamp(
+                os.path.getmtime(self.events_file_path))
             with open(self.events_file_path, "r", encoding="utf-8") as file_stream:
-                temp_pros = {sub["relative_url"]:Professional(**sub) for sub in json.load(file_stream)}
+                temp_pros = {sub["relative_url"]: Professional(
+                    **sub) for sub in json.load(file_stream)}
             for pro in self._professionals:
                 pro.events = temp_pros[pro.relative_url].events
 
@@ -285,7 +295,8 @@ class Professionals:
         for professional in bar:
             bar.text(f"{professional.relative_url}")
             if not professional.name:
-                professional = Professional.from_relative_url(self.driver, professional.relative_url)
+                professional = Professional.from_relative_url(
+                    self.driver, professional.relative_url)
         self.save(self.professionals_file_path, False)
 
     def get_events(self, force_get_event: bool = False):
@@ -296,13 +307,15 @@ class Professionals:
                 professional.get_events(self.driver)
                 bar.text(f"Fetching event for {professional.display_name}")
             else:
-                bar.text(f"Loading event from file for {professional.display_name}")
+                bar.text(
+                    f"Loading event from file for {professional.display_name}")
 
         self.save(self.events_file_path, True)
 
     def save(self, file_path: str, save_event: bool = False):
         with open(file_path, "w", encoding="utf-8") as file_stream:
-            json.dump([sub.to_dict(save_event) for sub in self._professionals], file_stream, indent=4, ensure_ascii=False)
+            json.dump([sub.to_dict(save_event) for sub in self._professionals],
+                      file_stream, indent=4, ensure_ascii=False)
 
     def __iter__(self):
         return self._professionals.__iter__()
