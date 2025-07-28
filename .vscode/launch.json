@@ -10,11 +10,20 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Beer Agenda",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/__main__.py",
+            "console": "integratedTerminal",
             "justMyCode": false,
-            // "args": [
-            //     "2025_04_21",
-            //     "2025_04_28"
-            // ]
+            "args": [
+                "2025_07_21",
+                "2025_07_27",
+                "full"
+            ]
         }
     ]
 }

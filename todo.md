@@ -1,0 +1,2 @@
+- "@" on urls should go to email
+- page_type can be page-types -> create enum & parse to sort

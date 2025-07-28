@@ -12,6 +12,7 @@ Is is meant to be used on Linux (debian based) and needs chromedriver to work
 This repo needs a selenium driver to work, for now chrome driver is used
 
 ## Google Chrome
+
 ```
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -19,6 +20,9 @@ sudo apt-get install -f
 ```
 
 ## Chrome driver
+
+go to https://googlechromelabs.github.io/chrome-for-testing/
+
 ```
 wget https://chromedriver.storage.googleapis.com/[compatible_version]/chromedriver-linux64.zip
 unzip chromedriver-linux64.zip
