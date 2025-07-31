@@ -121,11 +121,10 @@
         "name": "Brasserie Parisis",
         "relative_url": "brasserieparisis",
         "display_name": "la Brasserie Parisis",
-        "email": "",
+        "email": "contact@brasserie-parisis.com",
         "phone": "01 60 46 62 33",
         "address": "3 rue René Dumont, Combs-la-Ville, France",
         "urls": [
-            "contact@brasserie-parisis.com",
             "brasserie-parisis.com"
         ],
         "page_type": "Brasserie",
@@ -350,11 +349,10 @@
         "name": "Outland",
         "relative_url": "brasserieoutland",
         "display_name": "Outland",
-        "email": "",
+        "email": "contact@outland-beer.com",
         "phone": "01 74 50 17 37",
         "address": "54, rue André Tessier, Fontenay-sous-Bois, France",
         "urls": [
-            "contact@outland-beer.com",
             "outland-beer.com"
         ],
         "page_type": "Brasserie",
@@ -423,11 +421,10 @@
         "name": "Kilomètre Zéro",
         "relative_url": "people/Kilomètre-Zéro/100094598254148",
         "display_name": "le Kilomètre Zéro",
-        "email": "",
+        "email": "contact@km-0.bar",
         "phone": "01 42 74 37 36",
         "address": "39 rue notre-dame de nazareth, Paris, France",
         "urls": [
-            "contact@km-0.bar",
             "km-0.bar"
         ],
         "page_type": "Bar",
@@ -538,11 +535,10 @@
         "name": "Brasserie Artemus",
         "relative_url": "brasserieartemus",
         "display_name": "la Brasserie Artemus",
-        "email": "",
+        "email": "contact@brasserie-artemus.fr",
         "phone": "06 61 98 66 71",
         "address": "24 Ter Avenue des deux clochers, Limeil-Brévannes, France",
         "urls": [
-            "contact@brasserie-artemus.fr",
             "brasserie-artemus.fr"
         ],
         "page_type": "Alimentation et boissons",
@@ -692,11 +688,10 @@
         "name": "Gush Bar",
         "relative_url": "gushbarparis",
         "display_name": "le Gush Bar",
-        "email": "",
+        "email": "contact@gush-bar.com",
         "phone": "",
         "address": "Rue des Pyrénées , Paris, France",
         "urls": [
-            "contact@gush-bar.com",
             "gush-bar.com"
         ],
         "page_type": "Bar",

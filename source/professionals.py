@@ -4,6 +4,8 @@ from __future__ import annotations
 import os
 import re
 import json
+
+from enum import Enum
 from datetime import datetime
 
 from bs4 import BeautifulSoup
@@ -19,6 +21,38 @@ WORD_PATTERN = re.compile(r"\w+")
 
 DAY_FORMAT = '%Y %m %d'
 TODAY = datetime.strptime(datetime.now().strftime(DAY_FORMAT), DAY_FORMAT)
+
+
+class ProType(Enum):
+    Bar = 1
+    Troquet = 1
+    Brasserie = 2
+    Cave = 3
+    Magasin = 3
+    Boissons = 3
+    Vente = 3
+    Boutique = 3
+    Restaurant = 4
+    Concert = 5
+    Autre = 6
+
+    @staticmethod
+    def getStrTypes(type: str) -> list[str]:
+        type = type.lower()
+        types: list[ProType] = []
+        for str_type in type.split(" "):
+            if not str_type:
+                continue
+            str_type = str_type[0].capitalize()+str_type[1:]
+            try:
+                type = ProType[str_type].name
+            except KeyError:
+                continue
+            if type not in types:
+                types.append(type)
+        if not types:
+            types.append(ProType.Autre.name)
+        return types
 
 
 class Event:
@@ -149,6 +183,7 @@ class Professional:
         self.urls = [url.strip() for url in urls]
         self.page_type = page_type.strip()
         self.subscribed = subscribed
+        self.types = ProType.getStrTypes(self.page_type)
 
     @property
     def event_url(self):
@@ -188,24 +223,25 @@ class Professional:
         "subscribed"
     ]
 
-    def to_dict(self, get_events: bool = False) -> dict[str]:
+    def to_dict(self, get_events: bool = False, keys: list[str] = KEY_DICT_LIST) -> dict[str]:
         my_dict = {key: self.__dict__[key]
-                   for key in Professional.KEY_DICT_LIST}
+                   for key in keys}
         if get_events:
             my_dict["events"] = [event.to_dict() for event in self.events]
         return my_dict
 
     PHONE_NUMBER_PATTERN = re.compile(r"\d\d ?\d\d ?\d\d ?\d\d ?\d\d")
     ADDRESS_PATTERN = re.compile(r".*, France")
+    ALLOWED_EMAIL_CHAR = r"[\w\-_.]"
     EMAIL_PATTERN = re.compile(
-        r"^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$")
+        rf"^{ALLOWED_EMAIL_CHAR}+@{ALLOWED_EMAIL_CHAR}+\.\w+$")
     URL_PATTERN = re.compile(
         r"[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)")
     INTRO_KEY = "Intro"
     PAGE_TYPE_KEY = "Page"
 
     @staticmethod
-    def _get_relevant_data(soup: BeautifulSoup) -> dict[str]:
+    def _get_relevant_date_from_soup(soup: BeautifulSoup) -> dict[str]:
         data = [data.strip() for data in soup.get_text(
             separator='\n').split('\n') if data.strip()]
         i_start = 0
@@ -216,7 +252,12 @@ class Professional:
                 i_start = i
             elif "Confidentialité" in data_str:
                 break
-        data = data[i_start:i]
+        data = Professional._get_relevant_data(data[i_start:i])
+        data["name"] = name
+        return data
+
+    @staticmethod
+    def _get_relevant_data(data: list[str]) -> dict[str]:
         phone = ""
         urls = []
         address = ""
@@ -245,13 +286,19 @@ class Professional:
                 pass
 
         return {
-            "name": name,
             "email": email,
             "phone": phone,
             "address": address,
             "urls": urls,
             "page_type": professional_type
         }
+
+    def _correct_data(self):
+        data = Professional._get_relevant_data(
+            [self.email, self.phone, self.address, self.page_type]+self.urls)
+        for key, value in data.items():
+            if value:
+                self.__dict__[key] = value
 
     @staticmethod
     def from_relative_url(driver: Driver, relative_url: str) -> Professional:
@@ -297,6 +344,7 @@ class Professionals:
             if not professional.name:
                 professional = Professional.from_relative_url(
                     self.driver, professional.relative_url)
+            professional._correct_data()
         self.save(self.professionals_file_path, False)
 
     def get_events(self, force_get_event: bool = False):
