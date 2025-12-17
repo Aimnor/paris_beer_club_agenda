@@ -5,10 +5,14 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import WebDriverException
 
+import platform
 
 class Driver:
-    def __init__(self, chromedriver_executable_path: str = "/usr/bin/chromedriver"):
-        service = Service(executable_path=chromedriver_executable_path)
+    def __init__(self):
+        if platform.system() == 'Linux':
+            service = Service(executable_path="/usr/bin/chromedriver")
+        elif platform.system() == 'Darwin':
+            service = Service(executable_path="/opt/homebrew/bin/chromedriver")
         options = webdriver.ChromeOptions()
         self._driver = webdriver.Chrome(service=service, options=options)
 
