@@ -70,3 +70,9 @@ python main.py
 ```bash
 /usr/bin/google-chrome-stable --user-data-dir="/tmp/chrome_dev_test" --disable-web-security --disable-gpu
 ```
+
+## Convert csv to json
+
+```bash
+cat data/professionals.csv | python3 -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))' | jq 'map(select(.relative_url and .relative_url != "")) | map({name, subscribed, urls: [.web, .instagram] | map(select(. != null and . != "")), relative_url, address})'
+```
