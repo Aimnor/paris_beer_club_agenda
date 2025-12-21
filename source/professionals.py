@@ -57,8 +57,11 @@ class ProType(Enum):
 
 class Event:
     DATE_DUMP_FORMAT = '%Y/%m/%d %H:%M'
+    # Facebook date format examples
+    # Sun, 21 Dec at 14:00 CET
+    # Sat, 3 Jan 2026 at 20:00 CET
     FACEBOOK_DATE_PATTERN = re.compile(
-        r"[A-Z][a-z][a-z], ([A-Z][a-z][a-z] \d\d?) at (\d\d?:\d\d)[^a-zA-Z0-1]([A-Z]M) [A-Z][A-Z][A-Z]T")
+        r"[A-Z][a-z][a-z], (\d\d?) ([A-Z][a-z][a-z])(?: (\d{4}))? at (\d\d?:\d\d)")
     FACEBOOK_LINK_PATTERN = re.compile(rf"{FACEBOOK_URL}events.*")
 
     def __init__(self, date: datetime | str, name: str, address: str, professional: Professional, link=str):
@@ -124,12 +127,17 @@ class Event:
         if "Upcoming" not in soup.text:
             print(f"No future events found for {professional.display_name}")
             return []
+        print(f"Future events found for {professional.display_name}")
         events = []
         for elem in soup.find_all('span'):
             match = Event.FACEBOOK_DATE_PATTERN.match(elem.text)
             if match:
+                day, month, year, time = match.groups()
+                if year is None:
+                    year = str(TODAY.year)
+
                 date = datetime.strptime(
-                    f'{TODAY.year} '+' '.join(match.groups()), '%Y %b %d %I:%M %p')
+                    f'{year} {month} {day} {time}', '%Y %b %d %H:%M')
 
                 event_elem = Event._get_even_elem(elem, elem.text)
 
