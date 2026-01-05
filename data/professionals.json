@@ -645,20 +645,6 @@
         "subscribed": false
     },
     {
-        "name": "La Communale Saint Ouen (Grand Paris)",
-        "relative_url": "communalesaintouen",
-        "display_name": "la Communale Saint Ouen (Grand Paris)",
-        "email": "",
-        "phone": "",
-        "address": "10 bis Rue de l'Hippodrome 93400 Saint-Ouen-sur-Seine",
-        "urls": [
-            "https://communalesaintouen.com",
-            "https://www.instagram.com/communalesaintouen"
-        ],
-        "page_type": "",
-        "subscribed": true
-    },
-    {
         "name": "La Fine Mousse Bar",
         "relative_url": "lafinemousse",
         "display_name": "la Fine Mousse Bar",
@@ -805,20 +791,6 @@
         "address": "6 Rue de la Folie Méricourt 75011 Paris",
         "urls": [
             "https://www.instagram.com/lefruitdelepidorge"
-        ],
-        "page_type": "",
-        "subscribed": true
-    },
-    {
-        "name": "Le Hasard Ludique",
-        "relative_url": "LeHasardLudique",
-        "display_name": "le Hasard Ludique",
-        "email": "",
-        "phone": "",
-        "address": "128 avenue de Saint Ouen 75018 Paris",
-        "urls": [
-            "https://www.lehasardludique.paris",
-            "https://www.instagram.com/lehasardludique"
         ],
         "page_type": "",
         "subscribed": true
